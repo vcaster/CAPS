@@ -1,5 +1,5 @@
 <?php
-class Pages extends Controller
+class Exambody extends Controller
 {
 
     public function __construct()
@@ -20,19 +20,59 @@ class Pages extends Controller
         $this->view('pages/index', $data);
     }
 
-    public function register()
+    public function dashboard()
     {
         $data = [
         'title' => 'Welcome'
         ];
-        $this->view('pages/register', $data);
+        $this->view('exambody/dashboard', $data);
     }
 
-    public function about()
+    public function universities()
     {
         $data = [
-        'title' => 'About Us'
+        'title' => 'Welcome'
         ];
-        $this->view("pages/about", $data);
+        $this->view('exambody/universities', $data);
+    }
+
+    public function reguni()
+    {
+        $data = [
+        'title' => 'Welcome'
+        ];
+        $this->view('exambody/reguni', $data);
+    }
+
+    public function uniedit()
+    {
+        $data = [
+        'title' => 'Welcome'
+        ];
+        $this->view('exambody/uniedit', $data);
+    }
+
+    public function courseedit()
+    {
+        $data = [
+        'title' => 'Welcome'
+        ];
+        $this->view('exambody/courseedit', $data);
+    }
+
+    public function regcourse()
+    {
+        $data = [
+        'title' => 'Welcome'
+        ];
+        $this->view('exambody/regcourse', $data);
+    }
+
+    public function cutoff()
+    {
+        $data = [
+        'title' => 'Welcome'
+        ];
+        $this->view('exambody/cutoff', $data);
     }
 }
