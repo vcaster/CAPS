@@ -1,11 +1,11 @@
 <?php
-class Portal extends Controller
+class Portals extends Controller
 {
 
     public function __construct()
     {
 
-        $this->postModel = $this->model('Post');
+        $this->portalModel = $this->model('Portal');
     }
 
     public function register()
@@ -18,7 +18,14 @@ class Portal extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
           // Init data
+            $courses = $this->portalModel->getCourses();
+            $states = $this->portalModel->getState();
+            $insts = $this->portalModel->getInst();
             $data =[
+            // 'depts' => $depts,
+            'insts' => $insts,
+            'states' => $states,
+            'courses' => $courses,
             'fname' => trim($_POST['fname']),
             'lname' => trim($_POST['lname']),
             'mname' => trim($_POST['mname']),
@@ -32,7 +39,7 @@ class Portal extends Controller
             'Institution' => trim($_POST['Institution']),
             'sex' => trim($_POST['sex']),
             'birthdate' => trim($_POST['birthdate']),
-            'age' => trim($_POST['age']),
+            // 'age' => trim($_POST['age']),
             'password' => trim($_POST['password']),
             'confirm_password' => trim($_POST['confirm_password']),
             'dept_err' => '',
@@ -41,10 +48,12 @@ class Portal extends Controller
             'confirm_password_err' => '',
             'sex_err' => '',
             'birthdate_err' => '',
+            'cos_err' => '',
             'phonen_err' => '',
             'localgov_err' => '',
             'nationality_err' => '',
             'Institution_err' => '',
+            'state_err' => '',
             'address_err' => '',
             'fname_err' => '',
             'lname_err' => '',
@@ -58,7 +67,7 @@ class Portal extends Controller
                 $data['email_err'] = 'Please enter email';
             } else {
               // Check email
-                if ($this->userModel->findUserByEmail($data['email'])) {
+                if ($this->portalModel->findUserByEmail($data['email'])) {
                     $data['email_err'] = 'Email is already taken';
                 }
             }
@@ -84,22 +93,22 @@ class Portal extends Controller
                 $data['address_err'] = 'Please enter address';
             }
             if (empty($data['localgov'])) {
-                $data['localgov_err'] = 'Please choose local goverment';
+                $data['localgov_err'] = 'Please enter local goverment';
+            }
+            if (empty($data['cos'])) {
+                $data['cos_err'] = 'Please select course';
             }
             if (empty($data['Institution'])) {
                 $data['Institution_err'] = 'Please select Institution';
             }
-            if (empty($data['dept'])) {
-                $data['dept_err'] = 'Please select department';
+            if (empty($data['state'])) {
+                $data['state_err'] = 'Please select State';
             }
             if (empty($data['birthdate'])) {
                 $data['birthdate_err'] = 'Please enter birth date';
             }
             if (empty($data['sex'])) {
                 $data['sex_err'] = 'Please select sex';
-            }
-            if (empty($data['age'])) {
-                $data['age_err'] = 'Please enter age';
             }
             // Validate Password
             if (empty($data['password'])) {
@@ -130,45 +139,54 @@ class Portal extends Controller
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
               //Register Users
-                if ($this->userModel->register($data)) {
+                if ($this->portalModel->register($data)) {
                     flash('registered', 'User registered and can login now.');
-                    redirect('users/login');
+                    redirect('portals/login');
                 } else {
                     die('Something went wrong');
                 }
             } else {
               // Load view with errors
-                $this->view('users/register', $data);
+                $this->view('portals/register', $data);
             }
         } else {
           // Init data
           // (isset($_POST['position'])) ? $_POST['position'] :
             // $depts = $this->userModel->getDept();
             // $positions = $this->userModel->getPosition();
-            $depts = $this->userModel->getPositionsA();
-
+            // $depts = $this->portalModel->getPositionsA();
+            $courses = $this->portalModel->getCourses();
+            $states = $this->portalModel->getState();
+            $insts = $this->portalModel->getInst();
             $data =[
-            'depts' => $depts,
-            'dept' => '',
-            'position' => '',
+            // 'depts' => $depts,
+            'insts' => $insts,
+            'states' => $states,
+            'courses' => $courses,
             'fname' => '',
             'lname' => '',
             'mname' => '',
             'email' => '',
             'phonen' => '',
+            'Institution' => '',
+            'localgov' => '',
             'nationality' => '',
             'address' => '',
             'sex' => '',
+            'state' => '',
             'birthdate' => '',
-            'age' => '',
+            'cos' => '',
             'password' => '',
             'confirm_password' => '',
             'dept_err' => '',
             'password_err' => '',
-            'age_err' => '',
+            'cos_err' => '',
             'confirm_password_err' => '',
             'sex_err' => '',
             'birthdate_err' => '',
+            'localgov_err' => '',
+            'Institution_err' => '',
+            'state_err' => '',
             'phonen_err' => '',
             'fname_err' => '',
             'nationality_err' => '',
@@ -182,7 +200,7 @@ class Portal extends Controller
 
 
           // Load view
-            $this->view('portal/register', $data);
+            $this->view('portals/register', $data);
         }
     }
     public function login()
@@ -212,28 +230,45 @@ class Portal extends Controller
                 $data['password_err'] = 'Please enter password';
             }
 
-          // Check Emaill
-            if ($this->userModel->findUserByEmail($data['email'])) {
-            } else {
-                $data['email_err'] = 'Email not found';
-            }
-
+          
           // Make sure errors are empty
             if (empty($data['email_err']) && empty($data['password_err'])) {
               // Validated
               //check and set Login
+                $checkExam = $this->portalModel->checkExam($data['email']);
+                $checkUni = $this->portalModel->checkUni($data['email']);
+                $checkStd = $this->portalModel->checkStd($data['email']);
 
-                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
-
-                if ($loggedInUser) {
-                    $this->createUserSession($loggedInUser);
-                } else {
-                    $data['password_err'] = "Incorrect Username or Password";
-                    $this->view('users/login', $data);
+                if ($checkExam) {
+                    $loggedInExam = $this->portalModel->loginE($data['email'], $data['password']);
+                    if ($loggedInExam) {
+                        $this->createUserSession($loggedInExam);
+                    } else {
+                        $data['password_err'] = "Incorrect Username or Password";
+                        $this->view('portals/login', $data);
+                    }
+                }
+                if ($checkUni) {
+                    $loggedInUni = $this->portalModel->loginU($data['email'], $data['password']);
+                    if ($loggedInUni) {
+                        $this->createUserSession($loggedInUni);
+                    } else {
+                        $data['password_err'] = "Incorrect Username or Password";
+                        $this->view('portals/login', $data);
+                    }
+                }
+                if ($checkStd) {
+                    $loggedInStd = $this->portalModel->loginS($data['email'], $data['password']);
+                    if ($loggedInStd) {
+                        $this->createUserSession($loggedInStd);
+                    } else {
+                        $data['password_err'] = "Incorrect Username or Password";
+                        $this->view('portals/login', $data);
+                    }
                 }
             } else {
               // Load view with errors
-                $this->view('users/login', $data);
+                $this->view('portals/login', $data);
             }
         } else {
           // Init data
@@ -245,7 +280,30 @@ class Portal extends Controller
             ];
 
           // Load view
-            $this->view('portal/login', $data);
+            $this->view('portals/login', $data);
         }
+    }
+
+    public function createUserSession($user)
+    {
+        $_SESSION['user_id'] = $user->username;
+        $_SESSION['user_cat'] = $user->statusU;
+
+        if ($_SESSION['user_cat'] == 1) {
+            redirect("exambody/dashboard");
+        } elseif ($_SESSION['user_cat'] == 2) {
+            redirect("university/dashboard");
+        } elseif ($_SESSION['user_cat'] == 3) {
+            redirect("student/dashboard");
+        }
+    }
+
+    public function Logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_lname']);
+        session_destroy();
+        redirect('users/login');
     }
 }

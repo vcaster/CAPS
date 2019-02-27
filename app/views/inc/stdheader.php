@@ -119,5 +119,5 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 </head>
 <body class="cbp-spmenu-push">
     <div class="main-content">
-<?php require 'usrsidebar.php'; ?>
-<?php require 'usrheaderinc.php'; ?>
+<?php require 'stdsidebar.php'; ?>
+<?php require 'stdheaderinc.php'; ?>

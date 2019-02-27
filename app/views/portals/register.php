@@ -5,7 +5,7 @@
 <br><br><br><br>
 <div style="display:flex;width:100%;">
 
-    <form action="<?php echo URLROOT; ?>/users/register" method="post">
+    <form action="<?php echo URLROOT; ?>/portals/register" method="post">
       <h1><center>Register</center></h1><br><br>
       <div style="width:50%;">
           <p>First Name</p>
@@ -50,12 +50,7 @@
             <?php echo (!empty($data['nationality_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['nationality']; ?>">
             <span class="invalid-feedback"><?php echo $data['nationality_err']; ?></span>
           </div>
-          <div style="width:10%;"  class="pull-right">
-              <p>Age</p>
-              <input type="text" name="age" class="
-                <?php echo (!empty($data['age_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['age']; ?>">
-              <span class="invalid-feedback"><?php echo $data['age_err']; ?></span>
-            </div>
+          
           <div style="width:80%;">
               <p>Phone No</p>
               <input type="text" name="phonen" class="
@@ -74,23 +69,41 @@
                 <?php echo (!empty($data['address_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['address']; ?>">
             <span class="invalid-feedback"><?php echo $data['address_err']; ?></span>
         </div>
-        <div style="width:100%;" class="sel sel--black-panther
-            <?php echo (!empty($data['position_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['position']; ?>">
-         <span class="invalid-feedback"><?php echo $data['position_err']; ?></span>
-        <select name="localgov" id="select-profession">
-          <option value="" disabled>Local Govt</option>
-            <?php foreach ($data['depts'] as $depts) : ?>
-             <option value="<?php echo $depts->positionID; ?>" ><?php echo $depts->positionName; ?></option>
+        <div style="width:100%;">
+            <p>Local government</p>
+            <input type="text" name="localgov" class="
+            <?php echo (!empty($data['localgov_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['localgov']; ?>">
+            <span class="invalid-feedback"><?php echo $data['localgov_err']; ?></span>
+        </div>
+
+      <div style="width:100%;" class="sel sel--black-panther
+            <?php echo (!empty($data['state_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['state']; ?>">
+         <span class="invalid-feedback"><?php echo $data['state_err']; ?></span>
+        <select name="state" id="select-profession">
+          <option value="" disabled>State</option>
+            <?php foreach ($data['states'] as $states) : ?>
+             <option value="<?php echo $states->id; ?>" ><?php echo $states->name; ?></option>
+            <?php endforeach; ?>
+        </select>
+      </div>
+
+      <div style="width:100%;" class="sel sel--black-panther
+            <?php echo (!empty($data['cos_nerr'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['cos']; ?>">
+         <span class="invalid-feedback"><?php echo $data['cos_err']; ?></span>
+        <select name="cos" id="select-profession">
+          <option value="" disabled>Course</option>
+            <?php foreach ($data['courses'] as $courses) : ?>
+             <option value="<?php echo $courses->courseID; ?>" ><?php echo $courses->courseName; ?></option>
             <?php endforeach; ?>
         </select>
       </div>
         <div style="width:100%;" class="sel sel--black-panther
-            <?php echo (!empty($data['position_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['position']; ?>">
-         <span class="invalid-feedback"><?php echo $data['position_err']; ?></span>
+            <?php echo (!empty($data['Institution_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['Institution']; ?>">
+         <span class="invalid-feedback"><?php echo $data['Institution_err']; ?></span>
         <select name="Institution" id="select-profession">
           <option value="" disabled>Institution</option>
-            <?php foreach ($data['depts'] as $depts) : ?>
-             <option value="<?php echo $depts->positionID; ?>" ><?php echo $depts->positionName; ?></option>
+            <?php foreach ($data['insts'] as $insts) : ?>
+             <option value="<?php echo $insts->institutionID; ?>" ><?php echo $insts->institutionName; ?></option>
             <?php endforeach; ?>
         </select>
       </div>        

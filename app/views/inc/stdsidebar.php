@@ -14,17 +14,36 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="sidebar-menu">
-          <li class="header">MAIN NAVIGATION</li>
+          <li class="header">MAIN FUNCTIONS</li>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/admins/dashboard">
+            <a href="<?php echo URLROOT ?>/student/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
+
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/employees/pay/<?php echo $_SESSION['user_id']; ?>">
-            <i class="fa fa-money"></i> <span>Pay</span>
+            <a href="<?php echo URLROOT ?>/admins/dashboard">
+            <i class="fa fa-dashboard"></i> <span>Addmission letter</span>
             </a>
           </li>
+
+          <li class="treeview">
+            <a href="<?php echo URLROOT ?>/admins/dashboard">
+            <i class="fa fa-dashboard"></i> <span>Take Exam</span>
+            </a>
+          </li>
+          
+          <li class="treeview">
+            <a href="<?php echo URLROOT ?>/student/profile">
+            <i class="fa fa-users"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="<?php echo URLROOT ?>/admins/jobs">
+            <i class="fa fa-users"></i> <span>Offers</span>
+            </a>
+          </li>
+
     <!-- <li class="treeview">
             <a href="#">
             <i class="fa fa-laptop"></i>
@@ -44,20 +63,20 @@
             </a>
           </li>
           <li class="treeview"> -->
-          <li class="treeview">
+          <!-- <li class="treeview">
             <a href="#">
             <i class="fa fa-laptop"></i>
             <span>Uploads</span>
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo URLROOT ?>/employees/trainings/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-angle-right"></i> Training</a></li>
-              <li><a href="<?php echo URLROOT ?>/employees/reports/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-angle-right"></i> Reports</a></li>
-              <li><a href="<?php echo URLROOT ?>/employees/announcements/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-angle-right"></i> Annoucements</a></li>
-              <li><a href="<?php echo URLROOT ?>/employees/files/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-angle-right"></i> Documents</a></li>
-       <!--        <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li> -->
+              <li hidden><a href="<?php echo URLROOT ?>/admins/trainings"><i class="fa fa-angle-right"></i> Training</a></li>
+              <li><a href="<?php echo URLROOT ?>/admins/reports"><i class="fa fa-angle-right"></i> Reports</a></li>
+              <li><a href="<?php echo URLROOT ?>/admins/announcements"><i class="fa fa-angle-right"></i> Annoucements</a></li>
+              <li><a href="<?php echo URLROOT ?>/admins/files"><i class="fa fa-angle-right"></i> Employees Document</a></li>
+               <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li> 
             </ul>
-          </li>
+          </li -->
     <!-- <li>
             <a href="widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
@@ -105,10 +124,13 @@
               <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
             </ul>
           </li> -->
-          <li class="header">LABELS</li>
+          <!-- <li class="header">EXTRAS</li>
           <li><a href="<?php echo URLROOT ?>/admins/leaves"><i class="fa fa-angle-right text-red"></i> <span>Leaves</span></a></li>
-          <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Job Openings</span></a></li>
+          <li><a href="<?php echo URLROOT ?>/admins/applicants"><i class="fa fa-angle-right text-yellow"></i> <span>Applicants</span></a></li>
+          <li><a href="<?php echo URLROOT ?>/admins/jobopen"><i class="fa fa-angle-right text-yellow"></i> <span>Job Openings</span></a></li> -->
           <!-- <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>Information</span></a></li> -->
+            </ul>
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

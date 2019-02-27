@@ -7,11 +7,11 @@
                     <span>Welcome Back!</span>
                 </div>
                 <div class="col-md-3 sign-btn">
-                    <a  href="<?php echo URLROOT ?>/pages/login">
+                    <a  href="<?php echo URLROOT ?>/portals/login">
                             <i class="fas fa-lock"></i> Sign In</a>
                 </div>
                 <div class="col-md-3 sign-btn">
-                    <a  href="<?php echo URLROOT ?>/pages/register">
+                    <a  href="<?php echo URLROOT ?>/portals/register">
                             <i class="far fa-user"></i> Register</a>
                 </div>
                 <div class="search col-md-2">

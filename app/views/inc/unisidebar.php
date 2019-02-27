@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN FUNCTIONS</li>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/admins/dashboard">
+            <a href="<?php echo URLROOT ?>/university/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
@@ -26,18 +26,18 @@
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="forms.html"><i class="fa fa-angle-right"></i> Approve students</a></li>
-              <li><a href="validation.html"><i class="fa fa-angle-right"></i> View Students </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/university/studentapp"><i class="fa fa-angle-right"></i> Approve students</a></li>
+              <li><a href="<?php echo URLROOT ?>/university/studentlist"><i class="fa fa-angle-right"></i> View Students </a></li></ul>
               <li class="treeview">
             <a href="#">
             <i class="fa fa-users"></i> <span>Manage Courses</span>
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="forms.html"><i class="fa fa-angle-right"></i> Add Cut off</a></li>
-              <li><a href="validation.html"><i class="fa fa-angle-right"></i> View Courses </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/university/coursescutoff"><i class="fa fa-angle-right"></i> Add Cut off</a></li>
+              <li><a href="<?php echo URLROOT ?>/university/courselist"><i class="fa fa-angle-right"></i> View Courses </a></li></ul>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/admins/jobs">
+            <a href="<?php echo URLROOT ?>/university/marketplace">
             <i class="fa fa-users"></i> <span>Market place</span>
             </a>
           </li>
