@@ -35,4 +35,12 @@ class Student extends Controller
         ];
         $this->view('student/profile', $data);
     }
+
+    public function Logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_cat']);
+        session_destroy();
+        redirect('portals/login');
+    }
 }

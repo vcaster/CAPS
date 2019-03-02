@@ -11,13 +11,14 @@
                         
                         <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
                         
-                        <div class="title">
-                            <h4>Cut Off Mark</h4>
+                        <div class="title"><br>
+                            <h4>Cut Off Mark</h4><br>   
+                            <h4><?php echo $data['body']->cutOff; ?></h4>
                         </div>
                         
+                        <br>
                         
-                        
-                        <a href="<?php echo URLROOT ?>/admins/announcements">View All</a>
+                        <a href="<?php echo URLROOT ?>/exambodys/cutoff">View</a>
                         
                      </div>
                 </div>
@@ -30,11 +31,12 @@
                     
                         <div class="title">
                             <h4>Total Number of courses</h4>
+                            <h4><?php echo $data['uni']; ?></h4>
                         </div>
                         
                        
                         
-                        <a href="<?php echo URLROOT ?>/admins/onleave">View All</a>
+                        <a href="<?php echo URLROOT ?>/exambodys/courseedit">View All</a>
                         
                      </div>
                 </div>
@@ -46,10 +48,11 @@
                         
                         <div class="title">
                             <h4>Total Number of Universities</h4>
+                            <h4><?php echo $data['cos']; ?></h4>
                         </div>
                         
                                                  
-                        <a href="<?php echo URLROOT ?>/admins/reports">View All</a>
+                        <a href="<?php echo URLROOT ?>/exambodys/uniedit">View All</a>
                         
                      </div>
                 </div>  

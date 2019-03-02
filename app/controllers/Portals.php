@@ -298,12 +298,5 @@ class Portals extends Controller
         }
     }
 
-    public function Logout()
-    {
-        unset($_SESSION['user_id']);
-        unset($_SESSION['user_email']);
-        unset($_SESSION['user_lname']);
-        session_destroy();
-        redirect('users/login');
-    }
+    s
 }

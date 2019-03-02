@@ -18,7 +18,7 @@
 
             <ul class="nav nav-tabs">
                             <br><br><br>
-                <li class="active"><a data-toggle="tab" href="#home">Register Cut-Off</a></li>
+                <li class="active"><a data-toggle="tab" href="#home">Register Course</a></li>
               </ul>
 
 
@@ -26,26 +26,25 @@
             <div class="tab-pane active" id="home">
 
                                 <!-- Extended material form grid -->
-                                <form action="<?php echo URLROOT; ?>/admins/update/<?php echo $data['empdetails']->empID; ?>" method="post">
+                                <form action="<?php echo URLROOT; ?>/exambodys/regcourse" method="post">
 
-                                    <i class="fa fa-address-card fa-1x"></i>&nbsp;<h2>Register Cut-Off</h2>
+                                    <i class="fa fa-address-card fa-1x"></i>&nbsp;<h2>Register</h2>
                                     <hr>
                                    
-                                    <div class="form-row">
+                                   <div class="form-row">
                                         <!-- Grid column -->
                                         <div class="col-md-8">
-                                            <!-- Material input -->
-                                            <div class="md-form form-group">
-                                                <input type="text" class="form-control" name="fname" id="inputFirstNameMD" value="<?php echo $data['empdetails']->firstName; ?>">
-                                                <label for="inputFirstNameMD">Cut-Off Mark</label>
-                                            </div>
+                                                <!-- Material input -->
+                                                <div class="md-form form-group">
+                                                        <input type="text" class="form-control" name="course" id="inputPhoneMD" value="">
+                                                        <label for="inputPhoneMD">Course Name</label>
+                                                </div>
                                         </div>
                                         <!-- Grid column -->
-                                  </div><br>
-                                  <!-- Grid row -->
-        
+                                           
 
-                                    <a href="<?php echo URLROOT; ?>/admins/update/<?php echo $data['empdetails']->empID; ?>"><input type="submit" class="btn btn-primary btn-md pull-right" value="Save" id="sub"></a>
+                                </div><br>
+                                        <input type="submit" class="btn btn-primary btn-md pull-right" value="Save" id="sub">
                                 </form>
 
 

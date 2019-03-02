@@ -83,4 +83,12 @@ class University extends Controller
         ];
         $this->view("university/marketplace", $data);
     }
+
+    public function Logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_cat']);
+        session_destroy();
+        redirect('portals/login');
+    }
 }

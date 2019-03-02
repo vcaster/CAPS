@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN FUNCTIONS</li>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/exambody/dashboard">
+            <a href="<?php echo URLROOT ?>/exambodys/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
@@ -26,18 +26,18 @@
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo URLROOT ?>/exambody/reguni"><i class="fa fa-angle-right"></i> Add Universities</a></li>
-              <li><a href="<?php echo URLROOT ?>/exambody/uniedit"><i class="fa fa-angle-right"></i> Edit Universities </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/exambodys/reguni"><i class="fa fa-angle-right"></i> Add Universities</a></li>
+              <li><a href="<?php echo URLROOT ?>/exambodys/uniedit"><i class="fa fa-angle-right"></i> Edit Universities </a></li></ul>
               <li class="treeview">
             <a href="#">
             <i class="fa fa-users"></i> <span>Manage Courses</span>
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo URLROOT ?>/exambody/regcourse"><i class="fa fa-angle-right"></i> Add Courses</a></li>
-              <li><a href="<?php echo URLROOT ?>/exambody/courseedit"><i class="fa fa-angle-right"></i> Edit Courses </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/exambodys/regcourse"><i class="fa fa-angle-right"></i> Add Courses</a></li>
+              <li><a href="<?php echo URLROOT ?>/exambodys/courseedit"><i class="fa fa-angle-right"></i> Edit Courses </a></li></ul>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/exambody/cutoff">
+            <a href="<?php echo URLROOT ?>/exambodys/cutoff">
             <i class="fa fa-users"></i> <span>Cut Off</span>
             </a>
           </li>

@@ -17,12 +17,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($data['employees'] as $employee) : ?>
+                    <?php foreach ($data['unis'] as $unis) : ?>
                     <tr>
-                      <th scope="row"><?php echo $employee->empID; ?></th>
-                      <td><?php echo $employee->firstName; ?></td>
-                      <td><a href="<?php echo URLROOT; ?>/admins/update/<?php echo $employee->empID; ?>"><span class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span></span></a>
-                        <a href="<?php echo URLROOT; ?>/admins/delete/<?php echo $employee->empID; ?>"><span class="btn btn-danger btn-sm"><span class="fa fa-times"></span></span></a></td>
+                      <th scope="row"><?php echo $unis->institutionID; ?></th>
+                      <td><?php echo $unis->institutionName; ?></td>
+                      <td><a href="<?php echo URLROOT; ?>/exambodys/unidelete/<?php echo $unis->institutionID;
+                        ; ?>"><span class="btn btn-danger btn-sm"><span class="fa fa-times"></span></span></a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>
