@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/admheader.php'; ?>
+<?php require APPROOT . '/views/inc/uniheader.php'; ?>
         <!-- main content start-->
 <div id="page-wrapper">
     <div class="main-page">
@@ -12,13 +12,13 @@
                         <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>
                         
                         <div class="title"><br>
-                            <h4>Cut Off Mark</h4><br>   
-                            <h4><?php echo $data['body']->cutOff; ?></h4>
+                            <h4>Admitted Student</h4><br>
+                            <h4><?php echo $data['adm'];
+                            ; ?></h4>
                         </div>
-                        
+                                              
                         <br>
-                        
-                        <a href="<?php echo URLROOT ?>/exambodys/cutoff">View</a>
+                        <a href="<?php echo URLROOT ?>/universities/studentlist">View All</a>
                         
                      </div>
                 </div>
@@ -31,12 +31,12 @@
                     
                         <div class="title"><br>
                             <h4>Total Number of courses</h4><br>
-                            <h4><?php echo $data['uni']; ?></h4>
+                            <h4><?php echo $data['cos']; ?></h4>
                         </div>
-                        <br>
-                       
                         
-                        <a href="<?php echo URLROOT ?>/exambodys/courseedit">View All</a>
+                       <br>
+                        
+                        <a href="<?php echo URLROOT ?>/universities/courselist">View All</a>
                         
                      </div>
                 </div>
@@ -44,15 +44,15 @@
                
                     <div class="box-part text-center">
                         
-                        <i class="fa fa-university fa-3x" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
                         
                         <div class="title"><br>
-                            <h4>Total Number of Universities</h4><br>
-                            <h4><?php echo $data['cos']; ?></h4>
+                            <h4>Market place</h4><br>
+                            <h4><?php echo $data['mrk']; ?></h4>
+
                         </div>
-                        
-                       <br>                          
-                        <a href="<?php echo URLROOT ?>/exambodys/uniedit">View All</a>
+                        <br>                                                 
+                        <a href="<?php echo URLROOT ?>/universities/marketplace">View All</a>
                         
                      </div>
                 </div>  
@@ -62,4 +62,4 @@
     <br><br><br>
     </div>
 </div>
-<?php require APPROOT . '/views/inc/admfooter.php'; ?>
+<?php require APPROOT . '/views/inc/unifooter.php'; ?>

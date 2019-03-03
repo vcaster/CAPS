@@ -30,7 +30,7 @@
               <li><a href="<?php echo URLROOT ?>/exambodys/uniedit"><i class="fa fa-angle-right"></i> Edit Universities </a></li></ul>
               <li class="treeview">
             <a href="#">
-            <i class="fa fa-users"></i> <span>Manage Courses</span>
+            <i class="fa fa-book"></i> <span>Manage Courses</span>
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
@@ -38,7 +38,7 @@
               <li><a href="<?php echo URLROOT ?>/exambodys/courseedit"><i class="fa fa-angle-right"></i> Edit Courses </a></li></ul>
           <li class="treeview">
             <a href="<?php echo URLROOT ?>/exambodys/cutoff">
-            <i class="fa fa-users"></i> <span>Cut Off</span>
+            <i class="fa fa-graduation-cap"></i> <span>Cut Off</span>
             </a>
           </li>
 

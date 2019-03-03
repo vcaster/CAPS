@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN FUNCTIONS</li>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/university/dashboard">
+            <a href="<?php echo URLROOT ?>/universities/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
@@ -26,19 +26,19 @@
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo URLROOT ?>/university/studentapp"><i class="fa fa-angle-right"></i> Approve students</a></li>
-              <li><a href="<?php echo URLROOT ?>/university/studentlist"><i class="fa fa-angle-right"></i> View Students </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/universities/studentapp"><i class="fa fa-angle-right"></i> Approve students</a></li>
+              <li><a href="<?php echo URLROOT ?>/universities/studentlist"><i class="fa fa-angle-right"></i> View Students </a></li></ul>
               <li class="treeview">
             <a href="#">
-            <i class="fa fa-users"></i> <span>Manage Courses</span>
+            <i class="fa fa-book"></i> <span>Manage Courses</span>
             <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo URLROOT ?>/university/coursescutoff"><i class="fa fa-angle-right"></i> Add Cut off</a></li>
-              <li><a href="<?php echo URLROOT ?>/university/courselist"><i class="fa fa-angle-right"></i> View Courses </a></li></ul>
+              <li><a href="<?php echo URLROOT ?>/universities/coursescutoff"><i class="fa fa-angle-right"></i> Add Cut off</a></li>
+              <li><a href="<?php echo URLROOT ?>/universities/courselist"><i class="fa fa-angle-right"></i> View Courses </a></li></ul>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/university/marketplace">
-            <i class="fa fa-users"></i> <span>Market place</span>
+            <a href="<?php echo URLROOT ?>/universities/marketplace">
+            <i class="fa fa-shopping-cart"></i> <span>Market place</span>
             </a>
           </li>
 

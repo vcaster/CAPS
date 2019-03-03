@@ -290,13 +290,11 @@ class Portals extends Controller
         $_SESSION['user_cat'] = $user->statusU;
 
         if ($_SESSION['user_cat'] == 1) {
-            redirect("exambody/dashboard");
+            redirect("exambodys/dashboard");
         } elseif ($_SESSION['user_cat'] == 2) {
-            redirect("university/dashboard");
+            redirect("universities/dashboard");
         } elseif ($_SESSION['user_cat'] == 3) {
             redirect("student/dashboard");
         }
     }
-
-    s
 }

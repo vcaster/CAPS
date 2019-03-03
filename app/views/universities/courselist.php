@@ -8,7 +8,7 @@
 
                 <div class="panel-body widget-shadow">
                     <h4>Courses</h4>
-                    <form action="<?php echo URLROOT; ?>/admins/departments" method="post">
+                    <form action="<?php echo URLROOT; ?>/universities/courselist" method="post">
                   
                     <?php flash('post_message');  ?>
                     <table class="table table-hover">
@@ -20,11 +20,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($data['departments'] as $departments) : ?>
+                    <?php foreach ($data['cut'] as $cut) : ?>
                     <tr>
-                      <th scope="row"><?php echo $departments->deptName; ?></th>
-                      <td><?php echo $departments->mgrName; ?></td>
-                      <td><a href="<?php echo URLROOT; ?>/admins/deletedep/<?php echo $departments->deptID; ?>"><span class="btn btn-danger btn-sm"><span class="fa fa-times"></span></span></a></td>
+                      <th scope="row"><?php echo $cut->courseName; ?></th>
+                      <td><?php echo $cut->cut_ofI; ?></td>
+                      <td><a href="<?php echo URLROOT; ?>/universities/coursescutoff"><span class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span></span></a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

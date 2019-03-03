@@ -7,7 +7,7 @@
                 <!-- <h2 class="title1">Tables</h2> -->
                 <br><br>
                 <div class="panel-body widget-shadow">
-                    <h4>Addmitted students</h4>
+                    <h4>Market Place</h4>
                     <?php flash('post_message');  ?>
                     <table class="table table-hover">
                     <thead>
@@ -21,14 +21,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($data['leaves'] as $leave) : ?>
+                    <?php $i=0; ?>
+                    <?php foreach ($data['std'] as $std) : ?>
                     <tr>
-                      <th scope="row"><?php echo $leave->empID; ?></th>
-                      <td><?php echo $leave->firstName; ?></td>
-                      <td><?php echo $leave->lastName; ?></td>
-                      <td><?php echo $leave->reason; ?></td>
-                      <td><?php echo $leave->email; ?></td>
-                      <td><a href="<?php echo URLROOT; ?>/admins/leaveinfo/<?php echo $leave->leaveID; ?>"><span class="btn btn-primary btn-sm"><span class="fa fa-info"></span></span></a></td>
+                        <?php $i++; ?>
+                      <th scope="row"><?php echo $i; ?></th>
+                      <td><?php echo $std->firstName; ?></td>
+                      <td><?php echo $std->lastName; ?></td>
+                      <td><?php echo $std->courseName; ?></td>
+                      <td><?php echo $std->score; ?></td>
+                      <td><a href="<?php echo URLROOT; ?>/universities/studentprofile/<?php echo $std->studentID; ?>"><span class="btn btn-primary btn-sm"><span class="fa fa-info"></span></span></a></td>
 
                     </tr>
                     <?php endforeach; ?>
