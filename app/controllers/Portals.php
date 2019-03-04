@@ -294,7 +294,7 @@ class Portals extends Controller
         } elseif ($_SESSION['user_cat'] == 2) {
             redirect("universities/dashboard");
         } elseif ($_SESSION['user_cat'] == 3) {
-            redirect("student/dashboard");
+            redirect("students/dashboard");
         }
     }
 }

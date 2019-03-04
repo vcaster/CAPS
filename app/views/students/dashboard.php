@@ -9,15 +9,16 @@
                
                     <div class="box-part text-center">
                         
-                        <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
+                        <i class="fa fa-institution fa-3x" aria-hidden="true"></i>
                         
-                        <div class="title">
-                            <h4>Addmission Status</h4>
+                        <div class="title"><br>
+                            <h4>Addmission Status</h4><br>
+                            <h4><?php echo $data['adm']; ?></h4>
                         </div>
                         
+                        <br>
                         
-                        
-                        <a href="<?php echo URLROOT ?>/admins/announcements">View All</a>
+                        <a href="<?php echo URLROOT ?>/students/profile">View All</a>
                         
                      </div>
                 </div>
@@ -26,15 +27,16 @@
                
                     <div class="box-part text-center">
                         
-                        <i class="fa fa-hotel fa-3x" aria-hidden="true"></i>
+                        <i class="fa fa-line-chart fa-3x" aria-hidden="true"></i>
                     
-                        <div class="title">
-                            <h4>Score</h4>
+                        <div class="title"><br>
+                            <h4>Score</h4><br>
+                            <h4><?php echo $data['scr']->score; ?></h4>
                         </div>
                         
-                       
+                       <br>
                         
-                        <a href="<?php echo URLROOT ?>/admins/onleave">View All</a>
+                        <a href="<?php echo URLROOT ?>/students/profile">View All</a>
                         
                      </div>
                 </div>
@@ -42,20 +44,22 @@
                
                     <div class="box-part text-center">
                         
-                        <i class="fa fa-file-code-o fa-3x" aria-hidden="true"></i>
+                        <i class="fa fa-unlock fa-3x" aria-hidden="true"></i>
                         
-                        <div class="title">
-                            <h4>Total Number of offers</h4>
+                        <div class="title"><br>
+                            <h4>Total Number of offers</h4><br>
+                            <h4><?php echo $data['off']; ?></h4>
                         </div>
-                        
+                        <br>
                                                  
-                        <a href="<?php echo URLROOT ?>/admins/reports">View All</a>
+                        <a href="#">View All</a>
                         
                      </div>
                 </div>  
             </div>
         </div>
     </div>
+    <br><br><br>
     </div>
 </div>
 <?php require APPROOT . '/views/inc/stdfooter.php'; ?>

@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN FUNCTIONS</li>
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/student/dashboard">
+            <a href="<?php echo URLROOT ?>/students/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
@@ -26,16 +26,10 @@
             <i class="fa fa-dashboard"></i> <span>Addmission letter</span>
             </a>
           </li>
-
-          <li class="treeview">
-            <a href="<?php echo URLROOT ?>/admins/dashboard">
-            <i class="fa fa-dashboard"></i> <span>Take Exam</span>
-            </a>
-          </li>
           
           <li class="treeview">
-            <a href="<?php echo URLROOT ?>/student/profile">
-            <i class="fa fa-users"></i> <span>Profile</span>
+            <a href="<?php echo URLROOT ?>/students/profile">
+            <i class="fa fa-user"></i> <span>Profile</span>
             </a>
           </li>
           <li class="treeview">

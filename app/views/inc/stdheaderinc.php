@@ -34,10 +34,9 @@
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                   <span class="prfil-img"><img src="<?php echo URLROOT ?>/images/2 (2).jpg" alt=""> </span>
-                                    <div class="user-name">
-                                        <p><?php echo $_SESSION['user_fname']; ?> &nbsp; <?php echo $_SESSION['user_lname']; ?></p>
-                                        <span><?php echo $_SESSION['user_job']; ?></span>
+                                    <span class="prfil-img"><img src="<?php echo URLROOT ?>/images/user.png" alt=""> </span><div class="user-name">
+                                        <p><?php echo $_SESSION['user_id'];  ?></p>
+                                        <span>Student</span>
                                     </div>
                                     <i class="fa fa-angle-down lnr"></i>
                                     <i class="fa fa-angle-up lnr"></i>
@@ -45,8 +44,8 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu drp-mnu">
-                                <li> <a href="<?php echo URLROOT; ?>/employees/profile/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-user"></i> Profile</a>
-                                <li> <a href="<?php echo URLROOT; ?>/users/logout/<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                               
+                                <li> <a href="<?php echo URLROOT; ?>/students/logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
                             </ul>
                         </li>
                     </ul>
